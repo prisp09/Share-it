@@ -1,6 +1,9 @@
 {
   "name": "share-it",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.5.0"
+  },
   "description": "Share It! A password-protected file transfer app.",
   "main": "index.js",
   "scripts": {
