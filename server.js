@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const File = require("./models/File");
 
+const serverless = require('serverless-http');
+
 const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -57,4 +59,4 @@ async function handleDownload(req, res) {
     res.download(file.path, file.originalName);
 }
 
-app.listen(process.env.PORT); 
+module.exports.handler = serverless(app); 
